@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+/* 서브공통 */
+#container{
+  padding-top: 80px;
+  padding-bottom: 0;
+}
+.sub_wrap .sub_tit{
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  background: url(../img/sub/sub_bg01.png) no-repeat center center;
+  background-size: cover;
+}
+.sub_container{
+max-width: 1500px;
+    width: calc(100% - 40px);
+    margin: 80px auto 0;
+}
+.sub_container.no_pd{
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* 숙소 */
+.hotel_wrap > ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px 35px;
+}
+.hotel_wrap > ul li{
+  border: 1px solid var(--bd_color);
+}
+.hotel_wrap > ul li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hotel_wrap > ul li .hotel_img{
+  aspect-ratio: 100 / 70;
+}
+.hotel_wrap > ul li .hotel_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hotel_wrap > ul li .hotel_name{
+  min-height: 60px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.common_pop{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  inset: 0;
+  z-index: 1005;
+}
+.common_pop .pop_inner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 40px;;
+}
+.common_pop .pop_inner .tit_wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 55px;
+  padding: 0 20px 0 30px;
+  background: var(--k-color);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.common_pop .pop_inner .tit_wrap button{
+  width: 30px;
+  height: 30px;
+  font-weight: 600;
+  color: #fff;
+  background: url(../img/sub/ico_close.png) no-repeat center;
+}
+.common_pop .pop_inner .tit_wrap + div{
+  padding: 40px 30px;
+}
+.hotel_pop{
+  display: flex;
+  gap: 40px;
+}
+.hotel_pop .in_img {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.hotel_pop .in_img .main_img{
+  aspect-ratio: 100 / 65;
+  overflow: hidden;
+}
+.hotel_pop .in_img .main_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hotel_pop .in_img .img_list{
+  display: flex;
+  gap: 15px;
+}
+.hotel_pop .in_img .img_list > li{
+  flex: 1;
+}
+.hotel_pop .in_img .img_list > li button{
+  height: 100%;
+}
+.hotel_pop .in_img .img_list > li button img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hotel_pop .in_text{
+  flex: 1;
+}
+.hotel_pop .hotel_info li{
+  display: flex;
+  gap: 5px;
+  font-size: 1.6rem;
+}
+.hotel_pop .hotel_info li span{
+  flex-shrink: 0;
+}
+.hotel_pop .hotel_info li + li {
+  margin-top: 15px;
+}
+.hotel_pop .hotel_info li.site a{
+  transition: all 0.3s;
+}
+.hotel_pop .hotel_info li.site a:hover{
+  color: var(--k-color);
+}
+.hotel_pop .hotel_info li.site a::after{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/sub/ico_link.png) no-repeat center center;
+    background-size: contain;
+    vertical-align: bottom;
+    transition: all 0.3s;
+}
+.hotel_pop .hotel_info li.site a:hover:after{
+  background-image: url(../img/sub/ico_link_on.png);
+}
+.common_pop .pop_inner .btn_wrap{
+  text-align: center;
+}
+.common_pop .pop_inner .btn_wrap button{
+  min-width: 120px;
+  line-height: 40px;
+  background: var(--k-color);
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* 환율 */
+.exchange_wrap{
+  background: #f3f3f3;
+  text-align: center;
+  padding: 100px 0 150px;
+}
+.exchange_wrap .t_txt{
+  font-size: 28px;
+  font-weight: 500;
+}
+.exchange_wrap .calc_wrap{
+  margin: 50px auto 0;
+  background: #fff;
+  max-width: 500px;
+  border-radius: 15px;
+  padding: 40px;
+}
+.exchange_wrap .calc_wrap .mark{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--bd_color);
+}
+.exchange_wrap .calc_wrap .mark img{
+  max-width: 50px;
+}
+.exchange_wrap .calc_wrap > p{
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.exchange_wrap .calc_wrap input{
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  padding: 0 15px;
+  font-size: 2rem;
+  text-align: right;
+}
+.exchange_wrap .calc_wrap .change_btn{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: var(--k-color) url(../img/sub/ico_exchange.png) no-repeat center center;
+  transform: rotate(90deg);
+  font-size: 0;
+  color: transparent;
+}
+.exchange_wrap .calc_wrap .btn{
+  margin: 35px auto;
+}
+.exchange_wrap .calc_wrap .mark span{
+  font-size: 1.8rem;
+  font-weight: 500;
+}
