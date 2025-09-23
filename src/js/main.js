@@ -1,5 +1,5 @@
 // 맛집 데이터 불러오기
-fetch("../src/file/recommend.json") // JSON 불러오기
+fetch("./src/file/recommend.json") // JSON 불러오기
   .then((res) => res.json())
   .then((item) => {
     let ul = document.querySelector(".recommend_wrap > ul");
@@ -7,7 +7,7 @@ fetch("../src/file/recommend.json") // JSON 불러오기
       let li = document.createElement("li");
       li.innerHTML = `
             <div class="img_wrap">
-              <img src="../src/img/sub/restaurant/${data.img}" alt="${data.title}">
+              <img src="./src/img/sub/restaurant/${data.img}" alt="${data.title}">
             </div>
             <div class="txt_wrap">
               <p class="name">${data.title}</p>
@@ -160,14 +160,14 @@ function moveSlide() {
 let slideStart = setInterval(nextB, 4000);
 
 // 숙소 데이터 불러오기
-fetch("../src/file/hotel.json") // JSON 불러오기
+fetch("./src/file/hotel.json") // JSON 불러오기
   .then((res) => res.json())
   .then((data) => {
     let hotel_li = document.querySelectorAll(".hetel_info ul li");
     hotel_li.forEach((item, idx) => {
       let hotel_img = item.querySelector(".img");
       let hotel_name = item.querySelector(".text");
-      hotel_img.innerHTML = `<img src="../src/img/sub/hotel/${data[idx].subImg01}.jpg">`;
+      hotel_img.innerHTML = `<img src="./src/img/sub/hotel/${data[idx].subImg01}.jpg">`;
       hotel_name.innerHTML = `<p>${data[idx].name}</p>`;
     });
   });

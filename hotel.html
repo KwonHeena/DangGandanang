@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hotel</title>
-  <link rel="stylesheet" href="../src/css/common.css">
-  <link rel="stylesheet" href="../src/css/layout.css">
-  <link rel="stylesheet" href="../src/css/sub.css">
+  <link rel="stylesheet" href="src/css/common.css">
+  <link rel="stylesheet" href="src/css/layout.css">
+  <link rel="stylesheet" href="src/css/sub.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <div class="header_wrap">
       <div class="header_inner">
         <h1 class="logo">
-          <a href="index.html" data-page="index.html"><img src="../src/img/common/logo.png" alt="">다낭간다낭</a>
+          <a href="index.html" data-page="index.html"><img src="src/img/common/logo.png" alt="">다낭간다낭</a>
         </h1>
         <div class="ham_bar">
           <button type="button">
@@ -28,13 +28,16 @@
           <div class="gnb_wrap">
             <ul class="gnb">
               <li class="gnb_depth1">
+                <a href="index.html" data-page="index.html"><span>메인</span></a>
+              </li>
+              <li class="gnb_depth1">
                 <a href="hotel.html" data-page="hotel.html"><span>숙소</span></a>
               </li>
               <li class="gnb_depth1">
                 <a href="restaurant.html" data-page="restaurant.html"><span>맛집</span></a>
               </li>
               <li class="gnb_depth1">
-                <a href="weather.html" data-page="weather.html"><span>날씨</span></a>
+                <a href="weather.html" data-page=""><span>날씨</span></a>
               </li>
               <li class="gnb_depth1">
                 <a href="exchange.html" data-page="exchange.html"><span>환율</span></a>
@@ -45,15 +48,15 @@
       </div>
     </div>
   </header>
-   <div id="container">
-     <div class="sub_wrap">
-       <div class="sub_tit type01">
-         <h2>숙소</h2>
-       </div>
-       <div class="sub_container">
-         <div class="hotel_wrap">
-           <ul id="hotel_list"></ul>
-           <div class="common_pop">
+  <div id="container">
+    <div class="sub_wrap">
+      <div class="sub_tit type01">
+        <h2>숙소</h2>
+      </div>
+      <div class="sub_container">
+        <div class="hotel_wrap">
+          <ul id="hotel_list"></ul>
+          <div class="common_pop">
             <div class="pop_inner">
               <div class="tit_wrap">
                 <p>숙소 안내</p>
@@ -62,27 +65,27 @@
               <div class="hotel_pop">
                 <div class="in_img">
                   <div class="main_img">
-                    <img src="../src/img/sub/hotel/Brilliant01.jpg" alt="">
+                    <img src="src/img/sub/hotel/Brilliant01.jpg" alt="">
                   </div>
                   <ul class="img_list">
                     <li>
                       <button type="button">
-                        <img src="../src/img/sub/hotel/Brilliant01.jpg" alt="">
+                        <img src="src/img/sub/hotel/Brilliant01.jpg" alt="">
                       </button>
                     </li>
                     <li>
                       <button type="button">
-                        <img src="../src/img/sub/hotel/Brilliant02.jpg" alt="">
+                        <img src="src/img/sub/hotel/Brilliant02.jpg" alt="">
                       </button>
                     </li>
                     <li>
                       <button type="button">
-                        <img src="../src/img/sub/hotel/Brilliant03.jpg" alt="">
+                        <img src="src/img/sub/hotel/Brilliant03.jpg" alt="">
                       </button>
                     </li>
                     <li>
                       <button type="button">
-                        <img src="../src/img/sub/hotel/Brilliant04.jpg" alt="">
+                        <img src="src/img/sub/hotel/Brilliant04.jpg" alt="">
                       </button>
                     </li>
                   </ul>
@@ -90,10 +93,13 @@
                 <div class="in_text">
                   <ul class="hotel_info">
                     <li class="name">
-                      숙소명 : 
+                      숙소명 :
+                    </li>
+                    <li class="info">
+                      숙소 정보 :
                     </li>
                     <li class="service">
-                      부대서비스 : 
+                      부대서비스 :
                     </li>
                     <li class="site">
                       예약사이트 : <a href="#none" target="_blank">바로가기</a>
@@ -105,16 +111,16 @@
                 <button type="button" id="btn_close">닫기</button>
               </div>
             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-    <footer id="footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer">
     <div class="footer_inner">
       <div class="footer_bottom">
         <div class="ft_logo">
-          <img src="../src/img/common/ft_logo.png" alt="">
+          <img src="src/img/common/ft_logo.png" alt="">
         </div>
         <div class="ft_text">
           <div class="txt_top">
@@ -129,8 +135,8 @@
       </div>
     </div>
   </footer>
-  <script src="../src/js/sub.js"></script>
-  <script src="../src/js/common.js"></script>
+  <script src="src/js/sub.js"></script>
+  <script src="src/js/common.js"></script>
 </body>
 
 

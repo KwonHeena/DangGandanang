@@ -56,9 +56,7 @@ nav .gnb {
 	white-space: nowrap;
 	position: relative;
 }
-/* #container{
-  padding-bottom: 80px;
-} */
+
 .ham_bar{
   display: none;
 }
@@ -90,13 +88,22 @@ nav .gnb {
 
 
 @media screen and (max-width: 1024px) {
+  header{
+    height: 60px;  
+  }
+  .logo a{
+    font-size: 14px;
+  }
+  .logo a img{
+    max-width: 60px;
+  }
   nav{
     position: absolute;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
     background: #fff;
     width: 100%;
     left: -100%;
-    top: 80px;
+    top: 60px;
 	opacity: 0;
 	transition: all 0.4s;
   }
@@ -133,6 +140,7 @@ nav .gnb {
 	text-align: left;
 	padding: 0 20px;
 	border-bottom: 1px solid var(--bd_color);
+  font-size: 16px;
   }
 }
 
@@ -177,4 +185,39 @@ footer{
 }
 .footer_bottom .ft_text > p + p{
 	margin-top: 10px;	
+}
+
+@media screen and (max-width: 1024px){
+  footer{
+    padding: 10px 0 30px;
+  }
+  .footer_bottom{
+    flex-direction: column;
+    gap: 0px;
+    margin-left: 0;
+  }
+  .footer_bottom .ft_logo {
+    max-width: 95px;
+  }
+  .footer_bottom .txt_top{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer_bottom .ft_text p{
+    justify-content: center;
+  }
+  .footer_bottom .ft_text .txt_top > p:nth-of-type(2):after{
+    display: none;
+  }
+  .footer_bottom .ft_text .txt_top > p::after{
+    margin: 0 10px -2px 12px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .footer_bottom .txt_top .ft_link{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
 }

@@ -36,6 +36,9 @@ window.addEventListener("resize", resizeW);
 //       .then((response) => response.text())
 //       .then((data) => {
 //         container.innerHTML = data;
+//         const script = document.createElement("script");
+//         script.src = "src/js/sub.js";
+//         document.body.appendChild(script);
 //       });
 //   });
 // });
@@ -48,6 +51,9 @@ window.addEventListener("resize", resizeW);
 //       .then((response) => response.text())
 //       .then((data) => {
 //         container.innerHTML = data;
+//         const script = document.createElement("script");
+//         script.src = "src/js/sub.js";
+//         document.body.appendChild(script);
 //       });
 //   });
 // });

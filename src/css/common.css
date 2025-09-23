@@ -59,6 +59,9 @@ input[type=text]::-ms-clear { display:none;}
 input:focus::placeholder, textarea:focus::placeholder { color:transparent; }
 .bf::before, .af::after { display: block; content: "";}
 
+@media screen and (max-width: 768px){
+  html{font-size: 9px;}
+}
 /* ============================== //reset.css ============================== */
 
 @font-face {
