@@ -1,28 +1,32 @@
-// const apiKey = "ca4cafaaee024ba60d09e4e6";
-// const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/KRW`;
+const apiKey = "ca4cafaaee024ba60d09e4e6";
+const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/KRW`;
 
-// fetch(url)
-//   .then((res) => res.json())
-//   .then((data) => {
-//     let koInput = document.getElementById("ko");
-//     let vnInput = document.getElementById("vnd");
-//     if (data.result === "success") {
-//       const rate = data.conversion_rates.VND;
-//       ko = data.conversion_rates.KRW;
-//       vn = data.conversion_rates.VND;
+fetch(url)
+  .then((res) => res.json())
+  .then((data) => {
+    let koInput = document.getElementById("ko");
+    let vnInput = document.getElementById("vnd");
+    if (data.result === "success") {
+      ko = data.conversion_rates.KRW;
+      vn = data.conversion_rates.VND; 
 
-//       koInput.value = ko;
-//       vnInput.value = vn;
-
-//       document.querySelector(
-//         ".exchange_wrap"
-//       ).innerHTML = `1 KRW = ${rate.toLocaleString()}동`;
-//     }
-//   })
-//   .catch((error) => {
-//     console.error("API 호출 오류:", error);
-//     document.querySelector(".exchange_wrap").innerText = "오류 발생";
-//   });
+      // 초기값
+      koInput.value = 1000;
+      let commaV = koInput.value.replace(/,/g, "");
+      
+      vnInput.value = (vn * Number(koInput.value)).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      
+      koInput.addEventListener('input', () => {
+        vnInput.value = (vn * Number(koInput.value)).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      })
+      koInput.value = commaV.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  })
+  .catch((error) => {
+    console.error("API 호출 오류:", error);
+    document.querySelector(".exchange_wrap").innerText = "오류 발생";
+  });
+  
 
 // 숙소 json 불러오기
 fetch("src/file/hotel.json")

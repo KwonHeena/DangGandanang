@@ -1,10 +1,9 @@
 @charset "utf-8";
-
 /* 서브공통 */
-#container{
-    padding: 80px 0 120px;
+#container {
+  padding: 80px 0 120px;
 }
-.sub_wrap .sub_tit{
+.sub_wrap .sub_tit {
   min-height: 250px;
   display: flex;
   align-items: center;
@@ -18,84 +17,81 @@
   animation: scale 1.5s alternate forwards;
 }
 @keyframes scale {
-  0%{
+  0% {
     background-size: 110%;
   }
-  100%{
+  100% {
     background-size: 100%;
   }
 }
-.sub_wrap .sub_tit h2{
+.sub_wrap .sub_tit h2 {
   position: relative;
   z-index: 11;
 }
-.sub_wrap .sub_tit::after{
+.sub_wrap .sub_tit::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
 }
-
-.sub_container{
-max-width: 1500px;
-    width: calc(100% - 40px);
-    margin: 80px auto 0;
+.sub_container {
+  max-width: 1500px;
+  width: calc(100% - 40px);
+  margin: 80px auto 0;
 }
-.sub_container.no_pd{
+.sub_container.no_pd {
   max-width: 100%;
   width: 100%;
   margin: 0;
 }
-
 @media screen and (max-width: 1024px) {
-  #container{
+  #container {
     padding: 60px 0 120px;
   }
 }
 @media screen and (max-width: 768px) {
-  #container{
+  #container {
     padding: 60px 0 80px;
   }
-  .sub_container{
+  .sub_container {
     margin: 60px auto 0;
   }
-  .sub_wrap .sub_tit{
+  .sub_wrap .sub_tit {
     font-size: 25px;
     min-height: 150px;
   }
 }
-
 /* 숙소 */
-.hotel_wrap > ul{
+.hotel_wrap>ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 50px 35px;
 }
-.hotel_wrap > ul li{
+.hotel_wrap>ul li {
   border: 1px solid var(--bd_color);
 }
-.hotel_wrap > ul li a{
+.hotel_wrap>ul li a {
   display: block;
   width: 100%;
   height: 100%;
 }
-.hotel_wrap > ul li .hotel_img{
+.hotel_wrap>ul li .hotel_img {
   aspect-ratio: 100 / 70;
 }
-.hotel_wrap > ul li .hotel_img img{
+.hotel_wrap>ul li .hotel_img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.hotel_wrap > ul li .hotel_name{
+.hotel_wrap>ul li .hotel_name {
   min-height: 60px;
   padding: 20px;
   text-align: center;
   font-size: 1.8rem;
   font-weight: 500;
 }
-.common_pop{
+.common_pop {
   display: none;
   position: fixed;
   width: 100%;
@@ -104,7 +100,7 @@ max-width: 1500px;
   inset: 0;
   z-index: 1005;
 }
-.common_pop .pop_inner{
+.common_pop .pop_inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -115,9 +111,11 @@ max-width: 1500px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding-bottom: 40px;;
+  padding-bottom: 40px;
+  ;
+  max-height: calc(100dvh - 40px);
 }
-.common_pop .pop_inner .tit_wrap{
+.common_pop .pop_inner .tit_wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -128,17 +126,17 @@ max-width: 1500px;
   font-size: 2rem;
   font-weight: 500;
 }
-.common_pop .pop_inner .tit_wrap button{
+.common_pop .pop_inner .tit_wrap button {
   width: 30px;
   height: 30px;
   font-weight: 600;
   color: #fff;
   background: url(../img/sub/ico_close.png) no-repeat center;
 }
-.common_pop .pop_inner .tit_wrap + div{
+.common_pop .pop_inner .con_wrap{
   padding: 40px 30px 0;
 }
-.hotel_pop{
+.hotel_pop {
   display: flex;
   gap: 40px;
 }
@@ -148,113 +146,115 @@ max-width: 1500px;
   flex-direction: column;
   gap: 15px;
 }
-.hotel_pop .in_img .main_img{
+.hotel_pop .in_img .main_img {
   aspect-ratio: 100 / 65;
   overflow: hidden;
 }
-.hotel_pop .in_img .main_img img{
+.hotel_pop .in_img .main_img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.hotel_pop .in_img .img_list{
+.hotel_pop .in_img .img_list {
   display: flex;
   gap: 15px;
 }
-.hotel_pop .in_img .img_list > li{
+.hotel_pop .in_img .img_list>li {
   flex: 1;
 }
-.hotel_pop .in_img .img_list > li button{
+.hotel_pop .in_img .img_list>li button {
   width: 100%;
   height: 100%;
   max-height: 66px;
 }
-.hotel_pop .in_img .img_list > li button img{
+.hotel_pop .in_img .img_list>li button img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.hotel_pop .in_text{
+.hotel_pop .in_text {
   flex: 1;
 }
-.hotel_pop .hotel_info li{
+.hotel_pop .hotel_info li {
   display: flex;
   gap: 5px;
   font-size: 1.5rem;
 }
-.hotel_pop .hotel_info li span{
+.hotel_pop .hotel_info li span {
   flex-shrink: 0;
   font-weight: 500;
 }
-.hotel_pop .hotel_info li + li {
+.hotel_pop .hotel_info li+li {
   margin-top: 15px;
 }
-.hotel_pop .hotel_info li.site a{
+.hotel_pop .hotel_info li.site a {
   transition: all 0.3s;
 }
-.hotel_pop .hotel_info li.site a:hover{
+.hotel_pop .hotel_info li.site a:hover {
   color: var(--k-color);
 }
-.hotel_pop .hotel_info li.site a::after{
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url(../img/sub/ico_link.png) no-repeat center center;
-    background-size: contain;
-    vertical-align: bottom;
-    transition: all 0.3s;
+.hotel_pop .hotel_info li.site a::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/sub/ico_link.png) no-repeat center center;
+  background-size: contain;
+  vertical-align: middle;
+  transition: all 0.3s;
+  margin-bottom: 3px;
 }
-.hotel_pop .hotel_info li.site a:hover:after{
+.hotel_pop .hotel_info li.site a:hover:after {
   background-image: url(../img/sub/ico_link_on.png);
 }
-.common_pop .pop_inner .btn_wrap{
+.common_pop .pop_inner .btn_wrap {
   text-align: center;
   margin: 30px auto 0;
 }
-.common_pop .pop_inner .btn_wrap button{
+.common_pop .pop_inner .btn_wrap button {
   min-width: 120px;
   line-height: 40px;
   background: var(--k-color);
   color: #fff;
   border-radius: 5px;
 }
-
 @media screen and (max-width: 768px) {
-  .hotel_wrap > ul {
+  .hotel_wrap>ul {
     gap: 30px;
+  }
+  .common_pop .pop_inner .con_wrap{
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    padding: 20px;
   }
   .hotel_pop {
     flex-direction: column;
     gap: 30px;
-            max-height: 500px;
-        overflow-y: auto;
   }
 }
-
 /* 맛집 */
-.restaurant_wrap .inner_wrap > ul{
+.restaurant_wrap .inner_wrap>ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 45px;
 }
-.restaurant_wrap .inner_wrap > ul > li .res_box{
+.restaurant_wrap .inner_wrap>ul>li .res_box {
   height: 100%;
   display: flex;
   text-align: left;
 }
-.restaurant_wrap .inner_wrap > ul > li{
+.restaurant_wrap .inner_wrap>ul>li {
   max-height: max-content;
   border: 1px solid var(--bd_color);
   border-radius: 10px;
   overflow: hidden;
 }
-.restaurant_wrap .inner_wrap > ul > li .reco_ck_btn{
+.restaurant_wrap .inner_wrap>ul>li .reco_ck_btn {
   width: 100%;
   height: 100%;
   position: relative;
 }
-.restaurant_wrap .inner_wrap > ul > li .reco_ck_btn::before{
+.restaurant_wrap .inner_wrap>ul>li .reco_ck_btn::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -264,37 +264,37 @@ max-width: 1500px;
   border-radius: 10px;
   transition: all 0.3s;
 }
-.restaurant_wrap .inner_wrap > ul > li .reco_ck_btn:hover:before{
+.restaurant_wrap .inner_wrap>ul>li .reco_ck_btn:hover:before {
   border-color: var(--k-color);
 }
-.restaurant_wrap .inner_wrap > ul > li .res_box .img_wrap{
-    max-width: 300px;
-    width: 100%;
-    aspect-ratio: 10 / 9;
-    min-width: 0;
+.restaurant_wrap .inner_wrap>ul>li .res_box .img_wrap {
+  max-width: 300px;
+  width: 100%;
+  aspect-ratio: 10 / 9;
+  min-width: 0;
 }
-.restaurant_wrap .inner_wrap > ul > li .res_box .img_wrap img{
+.restaurant_wrap .inner_wrap>ul>li .res_box .img_wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap{
+.restaurant_wrap .inner_wrap>ul>li .res_box .inform_wrap {
   padding: 20px;
 }
-.restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap li{
+.restaurant_wrap .inner_wrap>ul>li .res_box .inform_wrap li {
   display: flex;
   gap: 5px;
   line-height: 22px;
   font-size: 1.5rem;
 }
-.restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap li + li{
+.restaurant_wrap .inner_wrap>ul>li .res_box .inform_wrap li+li {
   margin-top: 10px;
 }
-.restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap li span{
+.restaurant_wrap .inner_wrap>ul>li .res_box .inform_wrap li span {
   flex-shrink: 0;
   font-weight: 500;
 }
-.res_pop .map p{
+.res_pop .map p {
   background: #eaeaea;
   width: 100%;
   line-height: 45px;
@@ -302,50 +302,46 @@ max-width: 1500px;
   padding: 0 20px;
   border-radius: 10px 10px 0 0;
 }
-.res_pop .map iframe{
+.res_pop .map iframe {
   width: 100%;
   min-height: 300px;
   border: none;
   margin-top: 15pxx;
 }
-
 @media screen and (max-width: 1024px) {
-  .restaurant_wrap .inner_wrap > ul{
+  .restaurant_wrap .inner_wrap>ul {
     grid-template-columns: 1fr;
   }
 }
-
 @media screen and (max-width: 768px) {
-  .restaurant_wrap .inner_wrap > ul{
+  .restaurant_wrap .inner_wrap>ul {
     gap: 25px;
   }
-  .restaurant_wrap .inner_wrap > ul > li .res_box .img_wrap {
+  .restaurant_wrap .inner_wrap>ul>li .res_box .img_wrap {
     max-width: 240px;
   }
-  .restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap li + li {
+  .restaurant_wrap .inner_wrap>ul>li .res_box .inform_wrap li+li {
     margin-top: 5px;
   }
 }
-
 @media screen and (max-width: 500px) {
-  .restaurant_wrap .inner_wrap > ul > li .res_box {
+  .restaurant_wrap .inner_wrap>ul>li .res_box {
     flex-direction: column;
   }
-      .restaurant_wrap .inner_wrap > ul > li .res_box .img_wrap {
-        max-width: 100%;
-                max-height: 200px;
-    }
+  .restaurant_wrap .inner_wrap>ul>li .res_box .img_wrap {
+    max-width: 100%;
+    max-height: 200px;
+  }
 }
-
 /* 환율 */
 .exchange_wrap{
   background: #f3f3f3;
   text-align: center;
-  padding: 100px 0 150px;
+  padding: 100px 20px 150px;
   margin-bottom: -120px;
 }
 .exchange_wrap .t_txt{
-  font-size: 28px;
+  font-size: 2.8rem;
   font-weight: 500;
 }
 .exchange_wrap .calc_wrap{
@@ -360,10 +356,23 @@ max-width: 1500px;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid var(--bd_color);
+  position: relative;
+  
+}
+.exchange_wrap .calc_wrap .mark .box{
+    position: absolute;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 .exchange_wrap .calc_wrap .mark img{
   max-width: 50px;
+      position: absolute;
+    left: 10px;
+
 }
 .exchange_wrap .calc_wrap > p{
   font-size: 2rem;
@@ -371,12 +380,18 @@ max-width: 1500px;
   margin-bottom: 20px;
 }
 .exchange_wrap .calc_wrap input{
+  width: 100%;
   border: none;
-  border-radius: 10px;
+  border-bottom: 1px solid var(--bd_color);
   height: 50px;
   padding: 0 15px;
   font-size: 2rem;
   text-align: right;
+      letter-spacing: -0.02em;
+}
+.exchange_wrap .calc_wrap input:focus{
+  outline: none;
+  border-bottom: 1px solid var(--k-color);
 }
 .exchange_wrap .calc_wrap .change_btn{
   width: 50px;
@@ -393,4 +408,29 @@ max-width: 1500px;
 .exchange_wrap .calc_wrap .mark span{
   font-size: 1.8rem;
   font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .exchange_wrap{
+    padding: 60px 20px 80px;
+    margin-bottom: -80px;
+  }
+  .exchange_wrap .calc_wrap {
+    margin: 35px auto 0;
+    padding: 20px;
+}
+  .exchange_wrap .t_txt{
+    font-size: 2.2rem;
+  }
+  .exchange_wrap .calc_wrap .btn {
+    margin: 25px auto;
+}
+.exchange_wrap .calc_wrap .change_btn {
+    width: 35px;
+    height: 35px;
+    background-size: 22px;
+  }
+  .exchange_wrap .calc_wrap .mark img{
+    max-width: 40px;
+  }
 }

@@ -10,20 +10,20 @@ section .section_inner{
     margin: 0 auto;
     padding: 10rem 0 0;
 }
-.tit{
+section .tit{
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
 }
-.tit .more_view a{
+section .tit .more_view a{
   display: block;
   position: relative;
   padding-right: 6px;
   line-height: 30px;
   transition: all 0.3s;
 }
-.tit .more_view a::before{
+section .tit .more_view a::before{
   content: '';
   position: absolute;
   width: 30px;
@@ -36,11 +36,11 @@ section .section_inner{
   transition: all 0.3s;
   padding: 2px;
 }
-.tit .more_view a:hover:before{
+section .tit .more_view a:hover:before{
   width: calc(100% + 15px);
   border-radius: 15px;
 }
-.tit .more_view a::after{
+section .tit .more_view a::after{
     content: '';
     width: 24px;
     height: 24px;
@@ -51,7 +51,7 @@ section .section_inner{
     margin-left: 6px;
   margin-top: -1px;
   }
-.tit .more_view a:hover{
+section .tit .more_view a:hover{
   color: #fff;
 }
 
@@ -64,6 +64,13 @@ section .section_inner{
 @media screen and (max-width: 768px){
   section .section_inner{
     padding: 6rem 0 0;
+  }
+  section .tit{
+    margin-bottom: 15px;
+  }
+  section .tit .more_view a::before {
+    width: 27px;
+    height: 27px;
   }
 }
 
@@ -173,6 +180,11 @@ section .section_inner{
     font-size: 15px;
     line-height: 24px;
   }
+  .main_slide .arrow_btns button {
+    width: 30px;
+    height: 55px;
+    background-size: 18px;
+  }
 }
 
 /* 섹션02 */
@@ -201,7 +213,8 @@ section .section_inner{
     cursor: grab;
 }
 .recommend_wrap ul li{
-  max-width: 300px;
+  min-width: 256px;
+  width: 100%;
     height: 100%;
     border: 1px solid var(--bd_color);
     overflow: hidden;
@@ -229,10 +242,12 @@ section .section_inner{
 
 @media screen and (max-width: 768px) {
   .recommend_wrap ul li {
-    max-width: 220px;
+    min-width: 220px;
+        max-width: 220px;
   }
   .recommend_wrap ul li .txt_wrap{
     padding: 15px 10px;
+    font-size: 1.6rem;
   }
 }
 
