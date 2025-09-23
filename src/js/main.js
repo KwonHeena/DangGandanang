@@ -101,7 +101,12 @@ function dragEffect() {
     effect.style.top = e.pageY + "px";
   });
 }
-dragEffect();
+
+window.addEventListener("load", () => {
+  drag();
+  dragEffect();
+});
+
 
 let mainSlide;
 let slide_li;
@@ -117,7 +122,7 @@ function mainS() {
   slide_li.forEach((item) => {
     let txt = document.createElement("div");
     txt.classList.add("txt");
-    txt.innerHTML = `<p class="tit">"여행이 필요한 순간, 다낭"</p>
+    txt.innerHTML = `<p class="tit">여행이 필요한 순간, 다낭</p>
                     <p class="sub">푸른 바다, 맛있는 음식, 그리고 여유<br>지금 가장 완벽한 휴식을 만날 시간</p>
                   `;
 
@@ -184,7 +189,7 @@ let slideStart = setInterval(nextB, 4000);
 fetch("./src/file/hotel.json") // JSON 불러오기
   .then((res) => res.json())
   .then((data) => {
-    let hotel_li = document.querySelectorAll(".hetel_info ul li");
+    let hotel_li = document.querySelectorAll(".hotel_info ul li");
     hotel_li.forEach((item, idx) => {
       let hotel_img = item.querySelector(".img");
       let hotel_name = item.querySelector(".text");
@@ -192,3 +197,23 @@ fetch("./src/file/hotel.json") // JSON 불러오기
       hotel_name.innerHTML = `<p>${data[idx].name}</p>`;
     });
   });
+
+// 스크롤 이벤트
+window.addEventListener('scroll', () => {
+let sections = document.querySelectorAll('section');
+sections.forEach((item) => {
+    let offsetTop = item.offsetTop - 80;
+      let windowSet = window.scrollY;
+      if(windowSet >= offsetTop){
+        sections.forEach((el) => {
+          el.classList.remove('on')
+        })
+        item.classList.add('on');
+      }
+  })
+});
+
+
+window.addEventListener('load', () => {
+  document.querySelector('.section01').classList.add('on')
+})

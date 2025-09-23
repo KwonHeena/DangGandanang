@@ -20,6 +20,7 @@ section .tit .more_view a{
   display: block;
   position: relative;
   padding-right: 6px;
+  padding-top: 1px;
   line-height: 30px;
   transition: all 0.3s;
 }
@@ -100,12 +101,28 @@ section .tit .more_view a:hover{
   font-size: 38px;
   font-weight: 600;
   color: #fff;
+  transition: all 0.7s;
+  opacity: 0;
+  transform: translateY(60px);
+  transition-delay: 0.3s;
+}
+.section01.on .main_slide ul .txt .tit{
+   opacity: 1;
+  transform: translateY(0px);
 }
 .main_slide ul .txt .sub{
   font-size: 24px;
   line-height: 34px;
   font-weight: 500;
   color: #fff;
+  transition: all 0.7s;
+  opacity: 0;
+  transform: translateY(60px);
+  transition-delay: 0.5s;
+}
+.section01.on .main_slide ul .txt .sub{
+   opacity: 1;
+  transform: translateY(0px);
 }
 .main_slide ul li{
     width: 100%;
@@ -185,6 +202,10 @@ section .tit .more_view a:hover{
     height: 55px;
     background-size: 18px;
   }
+  .main_slide .count {
+    bottom: 15px;
+    min-width: 60px;
+  }
 }
 
 /* 섹션02 */
@@ -241,9 +262,12 @@ section .tit .more_view a:hover{
 }
 
 @media screen and (max-width: 768px) {
+  #drag{
+    display: none !important;
+  }
   .recommend_wrap ul li {
     min-width: 220px;
-        max-width: 220px;
+    max-width: 220px;
   }
   .recommend_wrap ul li .txt_wrap{
     padding: 15px 10px;
@@ -252,6 +276,22 @@ section .tit .more_view a:hover{
 }
 
 /* 섹션03 */
+.section03{
+  position: relative;
+}
+.section03::before {  
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 50%;
+    background: rgba(135, 206, 235, 0.3);
+    z-index: -1;
+    bottom: -25px;
+    transition: all 0.5s;
+}
+.section03.on::before{
+  width: 100%;
+}
 .fl_wrap{
     display: flex;
     align-items: flex-start;
@@ -267,32 +307,32 @@ section .tit .more_view a:hover{
     width: 100%;
     height: 100%;
 }
-.hetel_info{
+.hotel_info{
   aspect-ratio: 16 / 9;
 }
-.hetel_info > ul{
+.hotel_info > ul{
   display: flex;
   gap: 20px;
       height: 100%;
 }
-.hetel_info > ul li {
+.hotel_info > ul li {
   flex: 1;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
-.hetel_info > ul li .box{
+.hotel_info > ul li .box{
   height: 100%;
 }
-.hetel_info > ul li .img{
+.hotel_info > ul li .img{
   height: 100%;
 }
-.hetel_info > ul li img{
+.hotel_info > ul li img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.hetel_info > ul li .text{
+.hotel_info > ul li .text{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,15 +348,36 @@ section .tit .more_view a:hover{
   min-height: 65px;
   transition: all 0.5s;
 }
-.hetel_info > ul li a{
+.hotel_info > ul li a{
   display: block;
   width: 100%;
   height: 100%;
 }
-.hetel_info > ul li a:hover .text{
+.hotel_info > ul li a:hover .text{
   min-height: 100%;
   font-size: 2.2rem;
 }
+
+@media screen and (max-width: 768px){
+  .fl_wrap{
+    flex-direction: column;
+  }
+  .fl_wrap > div{
+    width: 100%;
+  }
+  .section03::before{
+    height: 70%;
+  }
+  .hotel_info > ul li .text{
+    font-size: 1.6rem;
+  }
+  .hotel_info > ul li a:hover .text{
+    font-size: 1.8rem;
+  }
+}
+
+
+/* 섹션04 */
 .cafe_list > ul{
     display: flex;
     gap: 10px;
@@ -348,19 +409,12 @@ section .tit .more_view a:hover{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10rem;
 }
 
 @media screen and (max-width: 768px){
-  .fl_wrap{
-    flex-direction: column;
-  }
-  .fl_wrap > div{
-    width: 100%;
-  }
   .cafe_wrap{
     flex-direction: column;
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
   .cafe_list > ul li a{
     min-width: 150px;
@@ -369,10 +423,8 @@ section .tit .more_view a:hover{
       width: 23px;
       height: 23px;
   }
-  .hetel_info > ul li .text{
-    font-size: 1.6rem;
-  }
 }
+
 @media screen and (max-width: 600px){
   .cafe_list{
     width: 100%;
@@ -382,5 +434,6 @@ section .tit .more_view a:hover{
   }
     .cafe_list > ul li a{
       min-width: auto;
+      padding-top: 2px
     }
 }

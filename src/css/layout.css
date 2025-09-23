@@ -93,6 +93,7 @@ nav .gnb {
   }
   .logo a{
     font-size: 14px;
+	margin-left: -10px;
   }
   .logo a img{
     max-width: 60px;
@@ -127,6 +128,16 @@ nav .gnb {
     height: 2px;
     background: #000;
     left: 0;
+	transition: all 0.3s;
+  }
+  .ham_bar button.on span:nth-of-type(2){
+	opacity: 0;
+  }
+.ham_bar button.on span:nth-of-type(1){
+	transform: rotate(45deg) translate(8px, 4.5px)
+  }
+  .ham_bar button.on span:nth-of-type(3){
+	transform: rotate(-45deg) translate(8px, -6px);
   }
   nav .gnb{
     flex-direction: column;

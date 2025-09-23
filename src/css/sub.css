@@ -112,8 +112,7 @@
   border-radius: 10px;
   overflow: hidden;
   padding-bottom: 40px;
-  ;
-  max-height: calc(100dvh - 40px);
+  max-height: calc(100dvh - 80px);
 }
 .common_pop .pop_inner .tit_wrap {
   display: flex;
@@ -227,11 +226,21 @@
     overflow-y: auto;
     padding: 20px;
   }
+  .common_pop .pop_inner .btn_wrap{
+    margin: 20px auto 0;
+  }
   .hotel_pop {
     flex-direction: column;
     gap: 30px;
   }
+  .hotel_pop .in_img .img_list {
+    gap: 8px;
+  }
+  .hotel_pop .hotel_info li.site a{
+    margin-top: -1px;
+  }
 }
+
 /* 맛집 */
 .restaurant_wrap .inner_wrap>ul {
   display: grid;
@@ -333,6 +342,16 @@
     max-height: 200px;
   }
 }
+
+/* 날씨 */
+.weather_wrap{
+  text-align: center;
+}
+.weather_wrap .t_txt{
+font-size: 2.8rem;
+    font-weight: 500;
+}
+
 /* 환율 */
 .exchange_wrap{
   background: #f3f3f3;
