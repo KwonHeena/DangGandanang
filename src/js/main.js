@@ -59,6 +59,27 @@ function drag() {
 
     ul.style.transform = `translateX(${tx}px)`;
   });
+
+  // 터치 이벤트 (모바일용)
+  ul.addEventListener("touchstart", (e) => {
+    isDown = true;
+    sx = e.touches[0].clientX;
+  });
+  ul.addEventListener("touchend", () => {
+    isDown = false;
+  });
+  ul.addEventListener("touchmove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    dx = e.touches[0].clientX - sx;
+    sx = e.touches[0].clientX;
+    tx += dx;
+
+    if (tx > 0) tx = 0;
+    if (tx < -max) tx = -max;
+
+    ul.style.transform = `translateX(${tx}px)`;
+  });
 }
 
 function dragEffect() {
