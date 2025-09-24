@@ -289,7 +289,7 @@ section .tit .more_view a:hover{
     background: rgb(135 206 235 / 19%);
     z-index: -1;
     bottom: -25px;
-    transition: all 0.5s;
+    transition: all 0.7s;
 }
 .section03.on::before{
   width: 100%;
