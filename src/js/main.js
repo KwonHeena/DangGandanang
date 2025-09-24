@@ -107,7 +107,6 @@ window.addEventListener("load", () => {
   dragEffect();
 });
 
-
 let mainSlide;
 let slide_li;
 let totalImg;
@@ -199,21 +198,20 @@ fetch("./src/file/hotel.json") // JSON 불러오기
   });
 
 // 스크롤 이벤트
-window.addEventListener('scroll', () => {
-let sections = document.querySelectorAll('section');
-sections.forEach((item) => {
-    let offsetTop = item.offsetTop - 80;
-      let windowSet = window.scrollY;
-      if(windowSet >= offsetTop){
-        sections.forEach((el) => {
-          el.classList.remove('on')
-        })
-        item.classList.add('on');
-      }
-  })
+window.addEventListener("scroll", () => {
+  let sections = document.querySelectorAll("section");
+  sections.forEach((item) => {
+    let offsetTop = item.offsetTop - 160;
+    let windowSet = window.scrollY;
+    if (windowSet >= offsetTop) {
+      sections.forEach((el) => {
+        el.classList.remove("on");
+      });
+      item.classList.add("on");
+    }
+  });
 });
 
-
-window.addEventListener('load', () => {
-  document.querySelector('.section01').classList.add('on')
-})
+window.addEventListener("load", () => {
+  document.querySelector(".section01").classList.add("on");
+});

@@ -186,7 +186,7 @@ footer{
 	align-items: center;
 	color: #ddd;
 }
-.footer_bottom .ft_text  .txt_top > p::after{
+.footer_bottom .ft_text  .txt_top > p:first-of-type:after{
 	content: '';
 	display: inline-block;
 	width: 1px;

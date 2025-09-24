@@ -351,12 +351,56 @@
   font-size: 2.8rem;
   font-weight: 500;
 }
+.weather_wrap .weather_inner{
+  margin: 60px auto 0;
+}
+.weather_wrap .weather_inner .w_fl_wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.weather_wrap .weather_inner .weather_icon{
+  position: relative;
+  padding-right: 50px;
+}
+.weather_wrap .weather_inner .weather_icon .temp{
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 43px;
+  font-weight: 500;
+}
+.weather_wrap .weather_inner .weather_txt{
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+@media screen and (max-width: 768px) {
+  .weather_wrap .weather_inner {
+    margin: 35px auto 0;
+  }
+  .weather_wrap .t_txt {
+    font-size: 2.2rem;
+  }
+  .weather_wrap .weather_inner .weather_txt{
+    font-size: 1.6rem;
+    margin-bottom: -3px;
+  }
+  .weather_wrap .weather_inner .weather_icon .temp{
+    font-size: 38px;
+    top: calc(50% - 0px);
+  }
+}
+
 
 /* 환율 */
 .exchange_wrap {
   background: #f3f3f3;
   text-align: center;
-  padding: 100px 20px 150px;
+  padding: 80px 20px 150px;
   margin-bottom: -120px;
 }
 .exchange_wrap .t_txt {
