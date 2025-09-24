@@ -215,6 +215,8 @@ async function weather() {
       case "01n":
         iconUrl = "./src/img/sub/ico_sky.png"; // 맑음
         break;
+      case "02d":
+      case "02n":
       case "03d":
       case "03n":
         iconUrl = "./src/img/sub/ico_fewclouds.png"; // 구름 조금
@@ -222,6 +224,7 @@ async function weather() {
       case "04d":
       case "04n":
         iconUrl = "./src/img/sub/ico_scatteredclouds.png"; // 구름 많음
+        current.textContent = "구름많음";
         break;
       case "broken clouds":
         iconUrl = "./src/img/sub/brokenclouds.png"; // 구름 걷히는 중
