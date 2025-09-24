@@ -12,7 +12,7 @@
   font-weight: 500;
   color: #fff;
   background: url(../img/sub/sub_bg01.png) no-repeat center center;
-  background-size: cover;
+  background-size: cover !important;
   position: relative;
   animation: scale 1.5s alternate forwards;
 }
