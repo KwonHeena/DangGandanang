@@ -5,19 +5,28 @@ fetch("./src/file/recommend.json") // JSON 불러오기
     let ul = document.querySelector(".recommend_wrap > ul");
     item.forEach((data) => {
       let li = document.createElement("li");
+      if (data.thema === "카페") {
+        li.classList.add("cafe");
+      }
       li.innerHTML = `
             <div class="img_wrap">
               <img src="./src/img/sub/restaurant/${data.img}" alt="${data.title}">
+              
             </div>
             <div class="txt_wrap">
+              <span class="tag">${data.thema}</span>
               <p class="name">${data.title}</p>
+              <div class="txt02">
+                <p><span>추천 메뉴 : </span>${data.menu}</p>
+                 <p><span>평균 가격 : </span>${data.price}</p>
+              </div>
             </div>
       `;
       ul.appendChild(li);
     });
 
     let lis = ul.querySelectorAll("li");
-    ul.style.width = `${lis.length * 279}px`;
+    ul.style.width = `${lis.length * 350}px`;
     drag();
   });
 

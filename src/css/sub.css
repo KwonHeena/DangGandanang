@@ -63,34 +63,100 @@
   }
 }
 /* 숙소 */
+.hotel_wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .hotel_wrap > ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 50px 35px;
+  grid-template-columns: 1fr;
+  gap: 50px 25px;
 }
-.hotel_wrap > ul li {
+/* .hotel_wrap > ul li {
   border: 1px solid var(--bd_color);
+} */
+.hotel_wrap > ul li {
+  display: flex;
+  gap: 25px;
+  position: relative;
 }
-.hotel_wrap > ul li a {
-  display: block;
-  width: 100%;
-  height: 100%;
+.hotel_wrap > ul li .go_site{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 15px;
+  color: #fff;
+  background: var(--k-color);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+}
+.hotel_wrap > ul li .go_site:hover{
+  background: rgb(0 137 157);
 }
 .hotel_wrap > ul li .hotel_img {
+  max-width: 350px;
   aspect-ratio: 100 / 70;
+  flex: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
 }
 .hotel_wrap > ul li .hotel_img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+.hotel_wrap > ul li .txtBox{
+  flex: 1;
+  margin-top: 15px;
+  padding-bottom: 55px;
+}
 .hotel_wrap > ul li .hotel_name {
-  min-height: 60px;
-  padding: 20px;
-  text-align: center;
+  /* padding: 20px; */
+  text-align: left;
   font-size: 1.8rem;
   font-weight: 500;
+  flex: 1;
+  margin-bottom: 15px;
 }
+.hotel_wrap > ul li .txtBox .sub_info{
+  font-size: 1.5rem;
+  line-height: 22px;
+}
+.hotel_wrap > ul li .txtBox .sub_info p{
+  display: flex;
+  gap: 5px;
+}
+.hotel_wrap > ul li .txtBox .sub_info strong{
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.hotel_wrap > ul li .txtBox .sub_info p + p{
+  margin-top: 10px;
+}
+.hotel_wrap .inform{
+  font-size: 1.5rem;
+  background: #f3f3f3;
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.hotel_wrap .inform::before{
+  content: '!';
+  width: 22px;
+  height: 22px;
+  background: rgb(0 137 157);;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 20px;
+  margin-right: 7px;
+}
+
 .common_pop {
   display: none;
   position: fixed;
@@ -146,7 +212,7 @@
   gap: 15px;
 }
 .hotel_pop .in_img .main_img {
-  aspect-ratio: 100 / 65;
+  aspect-ratio: 2 / 1;
   overflow: hidden;
 }
 .hotel_pop .in_img .main_img img {
@@ -164,47 +230,12 @@
 .hotel_pop .in_img .img_list > li button {
   width: 100%;
   height: 100%;
-  max-height: 66px;
+  max-height: 105px;
 }
 .hotel_pop .in_img .img_list > li button img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.hotel_pop .in_text {
-  flex: 1;
-}
-.hotel_pop .hotel_info li {
-  display: flex;
-  gap: 5px;
-  font-size: 1.5rem;
-}
-.hotel_pop .hotel_info li span {
-  flex-shrink: 0;
-  font-weight: 500;
-}
-.hotel_pop .hotel_info li + li {
-  margin-top: 15px;
-}
-.hotel_pop .hotel_info li.site a {
-  transition: all 0.3s;
-}
-.hotel_pop .hotel_info li.site a:hover {
-  color: var(--k-color);
-}
-.hotel_pop .hotel_info li.site a::after {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: url(../img/sub/ico_link.png) no-repeat center center;
-  background-size: contain;
-  vertical-align: middle;
-  transition: all 0.3s;
-  margin-bottom: 3px;
-}
-.hotel_pop .hotel_info li.site a:hover:after {
-  background-image: url(../img/sub/ico_link_on.png);
 }
 .common_pop .pop_inner .btn_wrap {
   text-align: center;
@@ -218,8 +249,38 @@
   border-radius: 5px;
 }
 @media screen and (max-width: 768px) {
+  .hotel_wrap .inform{
+    padding: 8px 12px;
+    font-size: 1.4rem;
+  }
+  .hotel_wrap .inform::before {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    padding-right: 1px;
+  }
   .hotel_wrap > ul {
-    gap: 30px;
+    gap: 35px;
+  }
+  .hotel_wrap > ul li{
+    flex-direction: column;
+    align-items: center;
+  }
+  .hotel_wrap > ul li .txtBox {
+    flex: inherit;
+    margin-top: 0;
+    padding-bottom: 45px;
+    width: 100%;
+  }
+  .hotel_wrap > ul li .hotel_name{
+    margin-bottom: 10px;
+  }
+  .hotel_wrap > ul li .go_site{
+    font-size: 1.4rem;
+      padding: 7px 12px;
+  }
+  .hotel_wrap > ul li .hotel_img {
+    max-width: 450px;
   }
   .common_pop .pop_inner .con_wrap {
     max-height: calc(100vh - 235px);
@@ -236,34 +297,37 @@
   .hotel_pop .in_img .img_list {
     gap: 8px;
   }
-  .hotel_pop .hotel_info li.site a {
-    margin-top: -1px;
+  .hotel_pop .in_img .img_list > li button{
+    max-height: 90px;
   }
+  
 }
 
 /* 맛집 */
 .restaurant_wrap .inner_wrap > ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 45px;
+  align-items: center;
+  gap: 50px 45px;
 }
 .restaurant_wrap .inner_wrap > ul > li .res_box {
   height: 100%;
   display: flex;
   text-align: left;
+  gap: 25px;
 }
 .restaurant_wrap .inner_wrap > ul > li {
   max-height: max-content;
-  border: 1px solid var(--bd_color);
-  border-radius: 10px;
-  overflow: hidden;
+  /* border: 1px solid var(--bd_color); */
+  /* border-radius: 10px;
+  overflow: hidden; */
 }
 .restaurant_wrap .inner_wrap > ul > li .reco_ck_btn {
   width: 100%;
   height: 100%;
   position: relative;
 }
-.restaurant_wrap .inner_wrap > ul > li .reco_ck_btn::before {
+/* .restaurant_wrap .inner_wrap > ul > li .reco_ck_btn::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -272,23 +336,29 @@
   border: 2px solid transparent;
   border-radius: 10px;
   transition: all 0.3s;
-}
-.restaurant_wrap .inner_wrap > ul > li .reco_ck_btn:hover:before {
+} */
+/* .restaurant_wrap .inner_wrap > ul > li .reco_ck_btn:hover:before {
   border-color: var(--k-color);
-}
+} */
 .restaurant_wrap .inner_wrap > ul > li .res_box .img_wrap {
   max-width: 300px;
   width: 100%;
-  aspect-ratio: 10 / 9;
+  aspect-ratio: 10 / 7;
   min-width: 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .restaurant_wrap .inner_wrap > ul > li .res_box .img_wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.5s;
+}
+.restaurant_wrap .inner_wrap > ul > li:hover .res_box .img_wrap img{
+  transform: scale(1.1);
 }
 .restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap {
-  padding: 20px;
+  /* margin-top: 10px; */
 }
 .restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap li {
   display: flex;
@@ -336,16 +406,23 @@
 @media screen and (max-width: 500px) {
   .restaurant_wrap .inner_wrap > ul > li .res_box {
     flex-direction: column;
+    gap: 15px;
   }
   .restaurant_wrap .inner_wrap > ul > li .res_box .img_wrap {
     max-width: 100%;
     max-height: 200px;
   }
+  .restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap {
+    margin-top: 0;
+  }
 }
 
 /* 날씨 */
 .weather_wrap {
+  background: #f3f3f3;
   text-align: center;
+  padding: 80px 20px 150px;
+  margin-bottom: -120px;
 }
 .weather_wrap .t_txt {
   font-size: 2.8rem;
@@ -354,7 +431,7 @@
 .weather_wrap .weather_inner{
   max-width: 500px;
   border-radius: 15px;
-  background: #f5f5f5;
+  background: #fff;
   margin: 60px auto 0;
   padding: 60px 40px;
 }
@@ -362,7 +439,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
 .weather_wrap .weather_inner .weather_icon{
   position: relative;
@@ -383,9 +460,13 @@
     font-size: 1.8rem;
 }
 .weather_wrap .weather_inner .weather_txt p + p{
-  margin-top: 10px;
+  margin-top: 7px;
 }
 @media screen and (max-width: 768px) {
+  .weather_wrap {
+    padding: 60px 20px 80px;
+    margin-bottom: -80px;
+  }
   .weather_wrap .weather_inner {
     margin: 35px auto 0;
   }
@@ -395,6 +476,7 @@
   .weather_wrap .weather_inner .weather_txt{
     font-size: 1.6rem;
     margin-bottom: -3px;
+    white-space: nowrap;
   }
   .weather_wrap .weather_inner .weather_icon .temp{
     font-size: 38px;
@@ -462,6 +544,7 @@
   border-bottom: 1px solid var(--k-color);
 }
 .exchange_wrap .calc_wrap .change_btn {
+  display: inline-block;
   width: 50px;
   height: 50px;
   border-radius: 100%;

@@ -46,19 +46,25 @@ fetch("src/file/hotel.json")
     item.forEach((hotel) => {
       let hotel_li = document.createElement("li");
       hotel_li.innerHTML = `
-        <a href="#none">
                   <div class="hotel_img">
                     <img src="src/img/sub/hotel/${hotel.subImg01}.jpg" alt="">
                   </div>
-                  <div class="hotel_name">
-                    ${hotel.name}
-                  </div>                
-                </a>
+                  <div class="txtBox">
+                    <div class="hotel_name">
+                      ${hotel.name}
+                    </div>
+                    <div class="sub_info">
+                        <p><strong>숙소 정보 : </strong>${hotel.info}</p>
+                        <p><strong>기타 서비스 : </strong>${hotel.service}</p>
+                      </div>
+                    </div>  
+                    <a href="${hotel.site}" target="_blank" title="새 창으로 열림" class="go_site">예약사이트 바로가기</a>              
       `;
       if (hotelList) {
         hotelList.appendChild(hotel_li);
       }
-      hotel_li.addEventListener("click", () => {
+      let bigImg = hotel_li.querySelector(".hotel_img");
+      bigImg.addEventListener("click", () => {
         commonPop.style.display = "block";
         document.querySelector("body").style.overflow = "hidden";
         imgList.innerHTML = "";
@@ -92,15 +98,15 @@ fetch("src/file/hotel.json")
           });
         });
 
-        let keyName = document.querySelector(".hotel_info .name");
-        let keyService = document.querySelector(".hotel_info .service");
-        let keySite = document.querySelector(".hotel_info .site");
-        let keyInfo = document.querySelector(".hotel_info .info");
+        // let keyName = document.querySelector(".hotel_info .name");
+        // let keyService = document.querySelector(".hotel_info .service");
+        // let keySite = document.querySelector(".hotel_info .site");
+        // let keyInfo = document.querySelector(".hotel_info .info");
 
-        keyName.innerHTML = `<span>숙소명 : </span>${hotel.name}`;
-        keyInfo.innerHTML = `<span>숙소 정보 : </span>${hotel.info}`;
-        keyService.innerHTML = `<span>부대서비스 : </span>${hotel.service}`;
-        keySite.innerHTML = `<span>예약사이트 : </span><a href="${hotel.site}" target="_blank">바로가기</a>`;
+        // keyName.innerHTML = `<span>숙소명 : </span>${hotel.name}`;
+        // keyInfo.innerHTML = `<span>숙소 정보 : </span>${hotel.info}`;
+        // keyService.innerHTML = `<span>부대서비스 : </span>${hotel.service}`;
+        // keySite.innerHTML = `<span>예약사이트 : </span><a href="${hotel.site}" target="_blank">바로가기</a>`;
       });
 
       let closeBtn = document.getElementById("close");
