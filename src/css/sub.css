@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* 서브공통 */
 #container {
-  padding: 80px 0 120px;
+  padding: 40px 0 58px;
 }
 .sub_wrap .sub_tit {
   min-height: 250px;
@@ -47,10 +47,10 @@
 }
 @media screen and (max-width: 1024px) {
   #container {
-    padding: 60px 0 120px;
+    padding: 30px 0 58px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) { 
   #container {
     padding: 60px 0 80px;
   }
@@ -70,7 +70,7 @@
 .hotel_wrap > ul {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 50px 25px;
+  gap: 40px 25px;
 }
 /* .hotel_wrap > ul li {
   border: 1px solid var(--bd_color);
@@ -80,9 +80,13 @@
   gap: 25px;
   position: relative;
 }
+.hotel_wrap > ul li:not(:last-of-type){
+  border-bottom: 1px solid var(--bd_color);
+  padding-bottom: 40px;
+}
 .hotel_wrap > ul li .go_site{
   position: absolute;
-  bottom: 0;
+  bottom: 40px;
   right: 0;
   padding: 10px 15px;
   color: #fff;
@@ -135,7 +139,7 @@
 .hotel_wrap > ul li .txtBox .sub_info p + p{
   margin-top: 10px;
 }
-.hotel_wrap .inform{
+.common_inform{
   font-size: 1.5rem;
   background: #f3f3f3;
   padding: 10px 15px;
@@ -143,7 +147,7 @@
   width: 100%;
   margin-bottom: 20px;
 }
-.hotel_wrap .inform::before{
+.common_inform::before{
   content: '!';
   width: 22px;
   height: 22px;
@@ -249,11 +253,11 @@
   border-radius: 5px;
 }
 @media screen and (max-width: 768px) {
-  .hotel_wrap .inform{
+  .common_inform{
     padding: 8px 12px;
     font-size: 1.4rem;
   }
-  .hotel_wrap .inform::before {
+  .common_inform::before {
     width: 18px;
     height: 18px;
     line-height: 18px;
@@ -265,6 +269,9 @@
   .hotel_wrap > ul li{
     flex-direction: column;
     align-items: center;
+  }
+  .hotel_wrap > ul li:not(:last-of-type){
+    padding-bottom: 35px;
   }
   .hotel_wrap > ul li .txtBox {
     flex: inherit;
@@ -278,6 +285,7 @@
   .hotel_wrap > ul li .go_site{
     font-size: 1.4rem;
       padding: 7px 12px;
+      bottom: 35px;
   }
   .hotel_wrap > ul li .hotel_img {
     max-width: 450px;
@@ -358,7 +366,7 @@
   transform: scale(1.1);
 }
 .restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap {
-  /* margin-top: 10px; */
+  margin-top: 5px;
 }
 .restaurant_wrap .inner_wrap > ul > li .res_box .inform_wrap li {
   display: flex;
@@ -419,68 +427,161 @@
 
 /* 날씨 */
 .weather_wrap {
-  background: #f3f3f3;
   text-align: center;
-  padding: 80px 20px 150px;
-  margin-bottom: -120px;
 }
 .weather_wrap .t_txt {
   font-size: 2.8rem;
   font-weight: 500;
+  margin-top: -50px;
 }
-.weather_wrap .weather_inner{
-  max-width: 500px;
-  border-radius: 15px;
-  background: #fff;
-  margin: 60px auto 0;
-  padding: 60px 40px;
-}
-.weather_wrap .weather_inner .w_fl_wrap{
+.weather_wrap .weather_inner {
+  margin: 0 auto;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  gap: 7%;
+  max-width: 1200px;
+}
+.weather_wrap .weather_inner .left_wrap {
+  background: url(../img/sub/img_phone.png) no-repeat center center;
+  background-size: 327px;
+    width: 100%;
+    min-width: 327px;
+    height: 690px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 30px;
-}
-.weather_wrap .weather_inner .weather_icon{
   position: relative;
-  padding-right: 50px;
 }
-.weather_wrap .weather_inner .weather_icon .temp{
+.weather_wrap .weather_inner .left_wrap:after{
+    content: "";
+    position: absolute;
+    max-width: 327px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    background: #fff; 
+}
+.weather_wrap .weather_inner .left_wrap:before {
+  content: "";
   position: absolute;
-  top: calc(50% - 10px);
+      width: 100%;
+      aspect-ratio:  1 / 1;
+  background: var(--k-color);
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.1;
+}
+.weather_wrap .weather_inner .weather_icon {
+    display: inline-block;
+  position: relative;
+  padding-right: 60px;
+}
+.weather_wrap .weather_inner .weather_icon .w_txt {
+  position: absolute;
+  top: 50%;
   right: 0;
   transform: translateY(-50%);
-  font-size: 43px;
+  font-size: 38px;
   font-weight: 500;
 }
-.weather_wrap .weather_inner .weather_txt{
-    text-align: left;
-    font-weight: 500;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
+.weather_wrap .weather_inner .current{
+  font-size: 1.6rem;
 }
-.weather_wrap .weather_inner .weather_txt p + p{
-  margin-top: 7px;
+.weather_wrap .weather_inner .weather_txt {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  margin-top: 15px;
+  font-size: 1.6rem;
 }
-@media screen and (max-width: 768px) {
-  .weather_wrap {
-    padding: 60px 20px 80px;
-    margin-bottom: -80px;
+.weather_wrap .weather_inner .weather_txt p:first-of-type::after{
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  background: var(--bd_color);
+  margin: 0 10px -1px;
+}
+.weather_wrap .weather_inner h3 {
+  font-size: 2.8rem;
+  color: var(--k-color);
+}
+.weather_wrap .weather_inner .right_wrap {
+  text-align: left;
+  padding-top: 10%;
+}
+.weather_wrap .weather_inner .right_wrap .text_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.7;
+}
+.weather_wrap .weather_inner .right_wrap p {
+  font-size: 1.8rem;
+  letter-spacing: -0.04em;
+}
+.weather_wrap .weather_inner .right_wrap p span {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--k-color2)
+}
+
+@media screen and (max-width: 1024px) {
+  .weather_wrap .weather_inner {
+    gap: 60px;
   }
+}
+
+@media screen and (max-width: 768px) {
   .weather_wrap .weather_inner {
     margin: 35px auto 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .weather_wrap .weather_inner .left_wrap:before{
+    width: 100%;
+    max-width: 600px;
   }
   .weather_wrap .t_txt {
     font-size: 2.2rem;
   }
-  .weather_wrap .weather_inner .weather_txt{
+  .weather_wrap .weather_inner .weather_txt {
     font-size: 1.6rem;
     margin-bottom: -3px;
-    white-space: nowrap;
   }
-  .weather_wrap .weather_inner .weather_icon .temp{
-    font-size: 38px;
-    top: calc(50% - 0px);
+  .weather_wrap .weather_inner .weather_icon .temp {
+    font-size: 32px;
+  }
+  .weather_wrap .weather_inner .right_wrap{
+    padding-top: 0;
+  }
+  .weather_wrap .weather_inner .left_wrap {
+    background-size: 287px;
+    min-width: 287px;
+    height: 605px;
+  }
+  .weather_wrap .weather_inner .left_wrap:after {
+    max-width: 287px;
+  }
+  .weather_wrap .weather_inner h3 {
+    font-size: 2.2rem;
+  }
+  .weather_wrap .weather_inner .weather_icon{
+    max-width: 160px;
+    padding-right: 55px;
+  }
+  .weather_wrap .weather_inner .right_wrap p {
+      font-size: 1.6rem;
+  }
+  .weather_wrap .weather_inner .right_wrap p span {
+    font-size: 1.8rem;
   }
 }
 

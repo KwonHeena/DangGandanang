@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 공통 */
-#container{
+.main{
     padding: 80px 0 120px;
 }
 section .section_inner{
@@ -189,15 +189,15 @@ section .tit .more_view a:hover{
     padding: 30px 0 0;
   }
   .main_slide ul .txt{
-    top: 10%;
+    top: 12%;
   }
   .main_slide ul .txt .tit {
     font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   .main_slide ul .txt .sub{
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 22px;
   }
   .main_slide .arrow_btns button {
     width: 30px;
@@ -302,8 +302,19 @@ section .tit .more_view a:hover{
     max-width: 220px;
   }
   .recommend_wrap ul li .txt_wrap{
-    padding: 15px 10px;
+    padding: 25px 10px 0;
     font-size: 1.6rem;
+  }
+  .recommend_wrap ul li .txt_wrap .tag {
+    padding: 4px 10px 6px;
+    top: -15px;
+  }
+  .recommend_wrap ul li .txt02 {
+    line-height: 20px;
+    margin-top: 10px;
+  }
+  .recommend_wrap ul li .txt02 p + p {
+    margin-top: 3px;
   }
 }
 
@@ -407,7 +418,6 @@ section .tit .more_view a:hover{
     font-size: 1.8rem;
   }
 }
-
 
 /* 섹션04 */
 .cafe_list > ul{
