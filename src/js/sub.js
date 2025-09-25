@@ -200,6 +200,8 @@ async function weather() {
     let temp = document.querySelector(".temp");
     let imgIcon = document.querySelector(".weather_icon img");
     let feel_w = document.querySelector(".feel_w");
+    let humidity = document.querySelector(".humidity");
+
     let iconCode = data.weather[0].icon;
     let description = data.weather[0].description;
     let iconUrl = "";
@@ -209,6 +211,7 @@ async function weather() {
     current.textContent = description;
     temp.textContent = `${Math.round(data.main.temp)}℃`;
     feel_w.textContent = `체감온도 ${Math.round(data.main.feels_like)} °`;
+    humidity.textContent = `습도 ${data.main.humidity}%`;
 
     switch (iconCode) {
       case "01d":
